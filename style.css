@@ -47,6 +47,7 @@ input {
 input[type='file']::-webkit-file-upload-button {
   /* Style the button */
   background: lightsalmon;
+  font-family: fantasy;
   color: white;
   font: inherit;
   padding: 0;
@@ -95,4 +96,22 @@ button {
 
 button:hover {
   color: blueviolet;
+}
+
+.existing {
+  position: absolute;
+  font-family: monospace;
+  font-size: 1em;
+  width: 100%;
+  margin-top: 20px;
+  text-anchor: end;
+  left: 38%;
+  z-index: 500;
+  background-color: rgb(21, 157, 199);
+  color: white;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
 }

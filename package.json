@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
   },
-  "author":
-    "Robert Cutright <robert.cutright@outlook.com> (http://robertcutright.com/)",
+  "author": "Robert Cutright <robert.cutright@outlook.com> (http://robertcutright.com/)",
   "license": "MIT",
   "devDependencies": {
     "electron": "1.8.4"

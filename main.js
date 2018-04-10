@@ -6,7 +6,16 @@ const url = require('url');
 let win;
 
 function createWindow() {
-  win = new BrowserWindow({ width: 353, height: 1020 });
+  win = new BrowserWindow({
+    width: 353,
+    height: 998,
+    resizable: false,
+    frame: false,
+    autoHideMenuBar: true,
+    darkTheme: true,
+    movable: true,
+    transparent: true
+  });
 
   win.loadURL(
     url.format({
