@@ -88,13 +88,14 @@ function handleValue(element, newLabel, div) {
 
 function execute(config, element) {
   const message = document.getElementById('message');
+  let outname = config.path.split('-unsigned').join('-signed');
   const path = `java -jar ${config.signer} -keystore=${
     config.keystore
   } -alias=${config.alias} -keystore-pwd=${
     config.keystorePassword
   } -alias-pwd=${config.aliasPassword} -chain=${
     config.certificate
-  } -module-in=${config.path} -module-out=${config.path}`;
+  } -module-in=${config.path} -module-out=${outname}`;
   const exec = require('child_process').exec;
   exec(path, (error, stdout, stderr) => {
     if (error instanceof Error) {
