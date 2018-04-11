@@ -1,118 +1,131 @@
 body {
-    font-family: fantasy;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: fantasy;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
-    position: relative;
-    margin-bottom: -40px;
-    padding-bottom: -20px;
-    background-color: lightcoral;
-    padding: 20px;
-    color: white;
-    transform: rotate(355deg);
-}
-
-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 40px;
+  position: relative;
+  margin-bottom: -40px;
+  padding-bottom: -20px;
+  background-color: lightcoral;
+  padding: 20px;
+  color: white;
+  transform: rotate(355deg);
 }
 
 #text-inputs {
-    background-color: mediumvioletred;
-    width: 100%;
+  background-color: mediumvioletred;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+  width: 100%;
 }
 
 #path-finders {
-    background-color: rgb(21, 157, 199);
-    width: 100%;
+  background-color: rgb(21, 157, 199);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+  width: 100%;
 }
 
 #path-finders input {
-    color: white;
-    font-size: 1rem;
+  color: white;
+  font-size: 1rem;
 }
 
 input {
-    margin-bottom: 20px;
-    margin-top: -10px;
-    -webkit-app-region: no-drag;
+  margin-bottom: 20px;
+  margin-top: -10px;
+  -webkit-app-region: no-drag;
 }
 
 input[type='file']::-webkit-file-upload-button {
-    /* Style the button */
-    background: lightsalmon;
-    font-family: fantasy;
-    color: white;
-    font: inherit;
-    padding: 0;
-    border: none;
-    position: relative;
-    width: 35%;
-    top: 0;
-    left: 0;
-    -webkit-app-region: no-drag;
+  /* Style the button */
+  background: lightsalmon;
+  font-family: fantasy;
+  color: white;
+  font: inherit;
+  padding: 0;
+  border: none;
+  position: relative;
+  width: 35%;
+  top: 0;
+  left: 0;
+  -webkit-app-region: no-drag;
 }
 
 input[type='file']::-webkit-file-upload-button:hover {
-    color: rgb(140, 0, 255);
-    cursor: pointer;
-    -webkit-app-region: no-drag;
+  color: rgb(140, 0, 255);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
 }
 
 #password,
 #text {
-    margin-top: -3%;
+  margin-top: -3%;
 }
 
 input {
-    text-align: center;
-    -webkit-app-region: no-drag;
+  text-align: center;
+  -webkit-app-region: no-drag;
 }
 
 button {
-    padding: 10px;
-    -webkit-app-region: no-drag;
-    top: 0;
-    background-color: rgb(252, 134, 0);
-    border: none;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
+  padding: 10px;
+  -webkit-app-region: no-drag;
+  top: 0;
+  background-color: rgb(252, 134, 0);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 button:hover {
-    color: blueviolet;
+  color: blueviolet;
 }
 
 .existing {
-    position: absolute;
-    font-family: monospace;
-    font-size: 1.2em;
-    margin-top: 20px;
-    left: 38%;
-    width: 100%;
-    z-index: 2000;
-    background-color: rgb(21, 157, 199);
-    color: white;
+  position: absolute;
+  font-family: monospace;
+  font-size: 1.2em;
+  margin-top: 55px;
+  height: 5%;
+  left: 38%;
+  width: 100%;
+  z-index: 2000;
+  background-color: rgb(21, 157, 199);
+  color: white;
 }
 
 .container {
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 #exit {
-    position: absolute;
-    z-index: 1000;
-    width: 12%;
-    right: 10px;
-    top: 0px;
-    text-align: center;
-    background-color: rebeccapurple;
+  position: absolute;
+  z-index: 1000;
+  width: 12%;
+  right: 10px;
+  top: 0px;
+  text-align: center;
+  background-color: rebeccapurple;
+}
+
+#message {
+  position: 'absolute';
+  bottom: 10%;
+  background-color: rgb(50, 200, 205);
+  padding: auto;
 }
