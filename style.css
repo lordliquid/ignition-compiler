@@ -1,117 +1,118 @@
 body {
-  font-family: fantasy;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    font-family: fantasy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header {
-  position: relative;
-  margin-bottom: -40px;
-  padding-bottom: -20px;
-  background-color: lightcoral;
-  padding: 20px;
-  color: white;
-  transform: rotate(355deg);
+    position: relative;
+    margin-bottom: -40px;
+    padding-bottom: -20px;
+    background-color: lightcoral;
+    padding: 20px;
+    color: white;
+    transform: rotate(355deg);
 }
 
 div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
 }
 
 #text-inputs {
-  background-color: mediumvioletred;
-  width: 100%;
+    background-color: mediumvioletred;
+    width: 100%;
 }
 
 #path-finders {
-  background-color: rgb(21, 157, 199);
-  width: 100%;
+    background-color: rgb(21, 157, 199);
+    width: 100%;
 }
 
 #path-finders input {
-  color: white;
-  font-size: 1rem;
+    color: white;
+    font-size: 1rem;
 }
 
 input {
-  text-align: right;
-  margin-bottom: 20px;
-  margin-top: -10px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    -webkit-app-region: no-drag;
 }
 
 input[type='file']::-webkit-file-upload-button {
-  /* Style the button */
-  background: lightsalmon;
-  font-family: fantasy;
-  color: white;
-  font: inherit;
-  padding: 0;
-  position: relative;
-  border: none;
-  position: relative;
-  z-index: 100;
-  width: 35%;
-  top: 0;
-  left: 0;
-  -webkit-appearance: none;
+    /* Style the button */
+    background: lightsalmon;
+    font-family: fantasy;
+    color: white;
+    font: inherit;
+    padding: 0;
+    border: none;
+    position: relative;
+    width: 35%;
+    top: 0;
+    left: 0;
+    -webkit-app-region: no-drag;
 }
 
 input[type='file']::-webkit-file-upload-button:hover {
-  color: rgb(140, 0, 255);
-  cursor: pointer;
-}
-
-input:focus {
-  align-content: center;
-  outline-color: palegreen;
+    color: rgb(140, 0, 255);
+    cursor: pointer;
+    -webkit-app-region: no-drag;
 }
 
 #password,
 #text {
-  margin-top: -3%;
+    margin-top: -3%;
 }
 
 input {
-  text-align: center;
+    text-align: center;
+    -webkit-app-region: no-drag;
 }
 
 button {
-  padding: 10px;
-  /*
-  margin: 0;
-  margin-bottom: -10px;
-  */
-  top: 0;
-  background-color: rgb(252, 134, 0);
-  border: none;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
+    padding: 10px;
+    -webkit-app-region: no-drag;
+    top: 0;
+    background-color: rgb(252, 134, 0);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 button:hover {
-  color: blueviolet;
+    color: blueviolet;
 }
 
 .existing {
-  position: absolute;
-  font-family: monospace;
-  font-size: 1em;
-  width: 100%;
-  margin-top: 20px;
-  text-anchor: end;
-  left: 38%;
-  z-index: 500;
-  background-color: rgb(21, 157, 199);
-  color: white;
+    position: absolute;
+    font-family: monospace;
+    font-size: 1.2em;
+    margin-top: 20px;
+    left: 38%;
+    width: 100%;
+    z-index: 2000;
+    background-color: rgb(21, 157, 199);
+    color: white;
 }
 
 .container {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#exit {
+    position: absolute;
+    z-index: 1000;
+    width: 12%;
+    right: 10px;
+    top: 0px;
+    text-align: center;
+    background-color: rebeccapurple;
 }
