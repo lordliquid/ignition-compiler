@@ -15,7 +15,10 @@ function newPathFinder(newLabel, elementToAppendTo) {
     div.appendChild(input);
 
     if (previous) {
-        let path = previous.split(`\\`);
+        let path = previous;
+        path = path.split(`\\`);
+        console.log("Previous Path:", path);
+        console.log("Previous Path:", previous);
         let existLabel = document.createElement('p');
         div.appendChild(existLabel);
         existLabel.setAttribute('class', 'existing');
@@ -73,7 +76,7 @@ function handleValue(element, newLabel, div) {
     if (div) {
         saveData(newLabel, element.files[0].path);
         let path = loadData(newLabel);
-        path = path.split(`\\`);
+        // path = path.split(`\\`);
         let existLabel = document.createElement('p');
         div.appendChild(existLabel);
         element.setAttribute('path', path);
@@ -91,6 +94,7 @@ function handleValue(element, newLabel, div) {
 function execute(config, element) {
     const message = document.getElementById('message');
     let outname = config.path.split('-unsigned').join('-signed');
+    console.log(outname);
     const path = `java -jar ${config.signer} -keystore=${
         config.keystore
     } -alias=${config.alias} -keystore-pwd=${
@@ -121,6 +125,7 @@ function getValue(element) {
 }
 
 function main() {
+    console.log("Main Called");
     var exitButton = document.getElementById('exit');
     var textInputs = document.getElementById('text-inputs');
     var pathFinders = document.getElementById('path-finders');
