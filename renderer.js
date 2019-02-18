@@ -6,6 +6,7 @@ function newPathFinder(newLabel, elementToAppendTo) {
     let label = document.createElement('h2');
 
     div.setAttribute('class', 'container');
+
     input.setAttribute('type', 'file');
     input.setAttribute('class', newLabel);
     label.setAttribute('htmlFor', newLabel);
@@ -16,10 +17,9 @@ function newPathFinder(newLabel, elementToAppendTo) {
 
     if (previous) {
         let path = previous;
-        path = path.split(`\\`);
-        console.log("Previous Path:", path);
-        console.log("Previous Path:", previous);
         let existLabel = document.createElement('p');
+        path = path.split(`\\`);
+        
         div.appendChild(existLabel);
         existLabel.setAttribute('class', 'existing');
         existLabel.innerHTML = path[path.length - 1];
@@ -34,9 +34,9 @@ function newPathFinder(newLabel, elementToAppendTo) {
 
 function newInput(newLabel, elementToAppendTo, type) {
     var previous = loadData(newLabel);
-
     var input = document.createElement('INPUT');
     var label = document.createElement('h2');
+
     type = type || 'text';
     input.setAttribute('id', type);
     input.setAttribute('type', type);
@@ -55,6 +55,7 @@ function newInput(newLabel, elementToAppendTo, type) {
 
 function newButton(newLabel, elementToAppendTo) {
     var button = document.createElement('button');
+
     elementToAppendTo.appendChild(button);
     button.setAttribute('name', newLabel);
     button.setAttribute('text', newLabel);
@@ -76,25 +77,31 @@ function handleValue(element, newLabel, div) {
     if (div) {
         saveData(newLabel, element.files[0].path);
         let path = loadData(newLabel);
-        // path = path.split(`\\`);
         let existLabel = document.createElement('p');
+
         div.appendChild(existLabel);
         element.setAttribute('path', path);
         existLabel.setAttribute('class', 'existing');
         existLabel.innerHTML = path[path.length - 1];
-        return;
     } else {
         element.setAttribute('value', element.value);
         element.setAttribute('path', path);
         saveData(newLabel, element.value);
-        return;
     }
 }
 
+
+
+function openDirectory(dir) {
+    const {shell} = require('electron');
+    let index = dir.lastIndexOf('\\');
+    let folderPath = dir.substring(0,index);
+    shell.openItem(folderPath);
+}
+
 function execute(config, element) {
-    const message = document.getElementById('message');
     let outname = config.path.split('-unsigned').join('-signed');
-    console.log(outname);
+    const message = document.getElementById('message');
     const path = `java -jar ${config.signer} -keystore=${
         config.keystore
     } -alias=${config.alias} -keystore-pwd=${
@@ -125,7 +132,6 @@ function getValue(element) {
 }
 
 function main() {
-    console.log("Main Called");
     var exitButton = document.getElementById('exit');
     var textInputs = document.getElementById('text-inputs');
     var pathFinders = document.getElementById('path-finders');
@@ -144,6 +150,8 @@ function main() {
     );
 
     var compileButton = newButton('Compile', textInputs);
+    var openDirButton = newButton('Open Directory', textInputs);
+
     exitButton.addEventListener('click', exit);
     compileButton.addEventListener('click', () =>
         execute(
@@ -160,6 +168,8 @@ function main() {
             textInputs
         )
     );
+
+    openDirButton.addEventListener('click', () => openDirectory(getPath(modl)));
 }
 
 main();
